@@ -24,6 +24,8 @@ install:
   - "python setup.py install"
   - "pip install coveralls"
   - "pip install jinja2"
+  - "pip install flake8"
+  - "pip install pylint"
   - "./.travis.sh"
   - "python -m spacy download en" 
 
@@ -35,6 +37,7 @@ before_script: # configure a headless display to test plot generation
 # command to run tests
 script: 
   # - "python ./test_script.py"
+  - "flake8 autonomio"
   - "coverage run --source=autonomio ./test_script.py"
   #- "coverage run -m autonomio.commands.data random_twitter"
 
