@@ -1,5 +1,6 @@
 import string
 
+
 class Ascify:
 
     '''
@@ -8,24 +9,20 @@ class Ascify:
         out = asc.Ascify(df.text).ascify()
 
     '''
-    
     def __init__(self,s):
 
         self.s = s
         self.printable = set(string.printable)
         self.iterable = self._is_iterable()
-        
-        
+       
     def _is_iterable(self):
         
         out = hasattr(self.s, '__iter__')
-        
         if out == True:
             
             self.length = len(self.s)
         
         return out
-        
         
     def _printable(self):
 
